@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jobs
   devise_for :users, controllers: { confirmations: 'confirmations' ,registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
