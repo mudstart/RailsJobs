@@ -1,0 +1,31 @@
+/*
+ * This is a manifest file that'll be compiled into application, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bootstrap-datepicker3";
+@import "assets/animate.css/animate.min.css";
+@import "assets/glyphicons/glyphicons.css";
+@import "assets/font-awesome/css/font-awesome.min.css";
+@import "assets/material-design-icons/material-design-icons.css";
+
+@import "assets/bootstrap/dist/css/bootstrap.min.css";
+@import "assets/styles/app.css";
+@import "assets/styles/font.css";
+
+@import "pace";
+@import "pnotify/pnotify";
+@import "pnotify/pnotify.buttons";
+@import "pnotify/pnotify.material";
+@import "pnotify/pnotify.mobile";
+@import "pnotify/pnotify.brighttheme";
+@import "datatables";

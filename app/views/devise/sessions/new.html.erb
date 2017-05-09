@@ -1,0 +1,41 @@
+<%# views/devise/sessions/new.html.erb %>
+
+
+<div class="m-b text-sm">
+  Sign in with your Rocket MD Account
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="md-form-group float-label">
+    <%= f.email_field :email, autofocus: true, :class => "md-input", :required => "", ng: {model: "nifty_form"} %>
+    <label>Email</label>
+  </div>
+  <div class="md-form-group float-label">
+    <%= f.password_field :password, autofocus: true, :class => "md-input",  :required => ""  %>
+    <label>Password</label>
+  </div>
+
+
+
+
+    <% if devise_mapping.rememberable? -%>
+        <div class="checkbox-inline">
+
+        </div>
+
+
+
+        <div class="m-b-md">
+          <label class="md-check">
+            <%= f.check_box :remember_me %>
+            <i class="primary"></i> Keep me signed in
+          </label>
+        </div>
+    <% end -%>
+
+
+
+
+
+    <%= f.submit "Sign in", :class => "btn primary btn-block p-x-md"%>
+<% end %>
+

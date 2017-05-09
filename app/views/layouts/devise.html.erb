@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rocket MD Software</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div class="app" id="app">
+
+  <div class="center-block w-xxl w-auto-xs p-y-md">
+    <div class="navbar">
+      <div class="pull-center">
+        <div ui-include="'../views/blocks/navbar.brand.html'"></div>
+      </div>
+    </div>
+    <div class="p-a-md box-color r box-shadow-z1 text-color m-a">
+
+      <%= yield %>
+    </div>
+
+    <div class="p-v-lg text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+
+</div>
+
+</body>

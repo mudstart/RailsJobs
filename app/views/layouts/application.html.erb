@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsJobs</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8" />
+  <title><%= content_for?(:title) ? yield(:title) : "Rails Jobs" %> </title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <meta name="description" content="RocketMD, Dashboard, Medical, Software " />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RocketMD">
+  <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+
+</head>
+
+<body >
+
+<div class="app" id="app">
+<%= render "partials/sidenav" %>
+
+
+  <div id="content" class="app-content box-shadow-z0" role="main">
+    <%= render "partials/topnav" %>
+    <%= render "partials/footer" %>
+    <div ui-view class="app-body" id="view">
+    <div style="min-height: 200px">
+      <%= yield %>
+    </div>
+    </div>
+
+  </div>
+  <%#= render "partials/theme_switcher" %>
+</div>
+
+
+
+  <%= javascript_include_tag 'footermanifest', 'data-turbolinks-track' => true %>
+</body>
 </html>
