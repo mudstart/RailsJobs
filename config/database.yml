@@ -1,3 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: <%= ENV['DB_NAME']%>
+  username: <%= ENV['DB_USER']%>
+  password: <%= ENV['DB_PASSWORD']%>
+  host:     <%= ENV['DB_HOST']%>
+
+development:
+  <<: *default
+  database: railsjobs_development
+
+test:
+  <<: *default
+  database: railsjobs_test
+
+production:
+  <<: *default
+  database: railsjobs_production
+
+
+
+
 # PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
@@ -14,16 +38,16 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
-  database: rails_jobs_development
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see rails configuration guide
+#   # http://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#
+# development:
+#   <<: *default
+#   database: rails_jobs_development
 
 
   # The specified database role being used to connect to postgres.
@@ -56,9 +80,9 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: rails_jobs_test
+# test:
+#   <<: *default
+#   database: rails_jobs_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -79,9 +103,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: rails_jobs_production
-  username: untitled
-  password: <%= ENV['UNTITLED_DATABASE_PASSWORD'] %>
-
+# production:
+#   <<: *default
+#   database: rails_jobs_production
+  # username: untitled
+  # password: <%= ENV['UNTITLED_DATABASE_PASSWORD'] %>
