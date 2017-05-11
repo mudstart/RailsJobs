@@ -2,7 +2,7 @@
 
 <h1>Jobs</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -16,7 +16,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody scope="row">
     <% @jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
